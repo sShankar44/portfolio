@@ -5,15 +5,365 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Siva Shankar Eppalapalli</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            background: black;
+            color: white;
+        }
+
+        
+
+        
+
+        #hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #matrix {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: black;
+        }
+
+        .hero-content {
+            z-index: 2;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: #800080;
+            text-shadow: 0 0 10px #800080;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #d8bfd8;
+        }
+
+        .hero-content .subtext {
+            font-size: 1.2rem;
+            color: #d8bfd8;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            background-color: #800080;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #d8bfd8;
+        }
+
+        section {
+            height: 100vh; /* Full screen height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            scroll-snap-align: start; /* Snap alignment for smooth navigation */
+        }
+
+        body {
+            scroll-snap-type: y mandatory; /* Enforces section snapping */
+            overflow-y: scroll;
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+
+        
+    </style>
 </head>
 <body>
-    <div id="matrix"></div>
-    <div id="content">
-        <h1>Siva Shankar Eppalapalli</h1>
-        <p class="about">Computer Science Engineer | Expertise in Java, Python, Machine Learning, Virtual Reality, and more.</p>
-        <p class="about">"Innovative solutions crafted with expertise and passion."</p>
-    </div>
+    
+    <!-- Hero Section -->
+    <header id="hero">
+        <div id="matrix"></div>
+        <div class="hero-content">
+            <h1>Siva Shankar Eppalapalli</h1>
+            <p class="tagline">Tech Enthusiast | Developer | Innovator</p>
+            <p class="subtext">"BeMyZero0 - Redefining Research & Development"</p>
+            <a href="#about" class="cta-button">Explore My Work</a>
+        </div>
+    </header>
+    
 
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#future">Future Projects</a></li>
+            <li><a href="#bemyzero">BeMyZero</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi! I'm Siva Shankar Eppalapalli, a passionate developer with expertise in creating innovative solutions. I strive to build impactful projects and lead research initiatives through BeMyZero0.</p>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Master's in Computer Science</h3>
+                <p>University of the Pacific (2023 - 2024)</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Bachelor's in Computer Science</h3>
+                <p>Hyderabad, Telangana (2016 - 2020)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="work">
+        <h2>Work Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Senior Software Engineer</h3>
+                <p>Wipro (5 years) | Achieved "RNR Award"</p>
+            </div>
+        </div>
+    </section>
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="grid">
+            <div class="project-card">
+                <h3>Matrix Portfolio</h3>
+                <p>A futuristic, interactive personal portfolio.</p>
+                <a href="#" onclick="showDetails('matrixPortfolio'); return false;">View Details</a>
+            </div>
+            <div class="project-card">
+                <h3>Virtual Reality Campus Tour</h3>
+                <p>An immersive VR experience for campus navigation.</p>
+                <a href="#" onclick="showDetails('vrCampusTour'); return false;">View Details</a>
+            </div>
+            <div class="project-card">
+                <h3>Building a Data Lake and Data Warehouse</h3>
+                <p>Integration of multiple databases into a data lake with advanced querying capabilities.</p>
+                <a href="#" onclick="showDetails('dataLake'); return false;">View Details</a>
+            </div>
+            <div class="project-card">
+                <h3>Interactive Data Dashboard</h3>
+                <p>A dynamic dashboard to visualize and interact with large datasets.</p>
+                <a href="#" onclick="showDetails('dataDashboard'); return false;">View Details</a>
+            </div>
+            <div class="project-card">
+                <h3>Vehicle Navigation Software Project</h3>
+                <p>Real-time route calculation and mapping for vehicles.</p>
+                <a href="#" onclick="showDetails('vehicleNav'); return false;">View Details</a>
+            </div>
+            <div class="project-card">
+                <h3>Data Storytelling Blog</h3>
+                <p>Blending analytics with narrative to create impactful data stories.</p>
+                <a href="#" onclick="showDetails('dataStory'); return false;">View Details</a>
+            </div>
+            <div class="project-card">
+                <h3>GamerBot: Informative Chatbot for Gamers</h3>
+                <p>An intelligent chatbot delivering detailed gaming information.</p>
+                <a href="#" onclick="showDetails('gamerBot'); return false;">View Details</a>
+            </div>
+            <div class="project-card">
+                <h3>Pacific Laundry Web Application</h3>
+                <p>A platform providing real-time notifications for laundry availability.</p>
+                <a href="#" onclick="showDetails('laundryApp'); return false;">View Details</a>
+            </div>
+        </div>
+    
+        <!-- Modal for Project Details -->
+        <div id="projectModal" class="modal" onclick="closeModal()">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <span class="close-button" onclick="closeModal()">&times;</span>
+                <div id="modalDetails"></div>
+            </div>
+        </div>
+    
+        <script>
+            const projectDetails = {
+                matrixPortfolio: "This project showcases a futuristic and interactive personal portfolio with a Matrix-style animated background, highlighting skills and projects in a dynamic way.",
+                vrCampusTour: "Created a Virtual Reality Campus Tour using Unity and Infinadeck, providing prospective students with an immersive experience. Features include unrestricted movement and audio narration.",
+                dataLake: "Developed a data lake by integrating data from MongoDB, Neo4j, Redis, and SQL databases. Enabled advanced querying capabilities for aggregate operations using Python.",
+                dataDashboard: "Designed an interactive data dashboard to visualize large datasets using Plotly and Matplotlib. Allowed users to filter, sort, and analyze data dynamically.",
+                vehicleNav: "Built a vehicle navigation system with real-time route calculation and mapping services. Focused on enhancing user interface and navigation efficiency.",
+                dataStory: "Created a blog blending data analytics with storytelling, using Python visualization libraries like Matplotlib and Seaborn to simplify complex data insights.",
+                gamerBot: "Developed an intelligent chatbot using BERT for gamers to access detailed game information like descriptions, release dates, and system requirements.",
+                laundryApp: "Designed a real-time notification system for on-campus laundry availability. Enhanced user experience by providing updates when machines were free or cycles completed."
+            };
+    
+            function showDetails(projectKey) {
+                const modal = document.getElementById("projectModal");
+                const details = projectDetails[projectKey];
+                const modalContent = document.getElementById("modalDetails");
+                modalContent.innerHTML = `<p>${details}</p>`;
+                modal.style.display = "flex";
+            }
+    
+            function closeModal() {
+                const modal = document.getElementById("projectModal");
+                modal.style.display = "none";
+            }
+        </script>
+    
+        <style>
+            .modal {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .modal-content {
+                background: white;
+                color: black;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+                width: 50%;
+                position: relative;
+            }
+    
+            .close-button {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+    
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+                padding: 20px;
+            }
+    
+            .project-card {
+                background: rgba(0, 0, 0, 0.8);
+                color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(128, 0, 128, 0.5);
+                transition: transform 0.3s, box-shadow 0.3s;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 250px;
+            }
+    
+            .project-card h3 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+                color: white;
+                flex-shrink: 0;
+            }
+    
+            .project-card p {
+                font-size: 1rem;
+                margin-bottom: 15px;
+                flex-grow: 0;
+                text-align: center;
+            }
+    
+            .project-card a {
+                background-color: #800080;
+                color: white;
+                padding: 10px 15px;
+                border-radius: 5px;
+                text-decoration: none;
+                transition: background-color 0.3s;
+                align-self: center;
+            }
+    
+            .project-card a:hover {
+                background-color: #d8bfd8;
+            }
+    
+            @media (max-width: 1024px) {
+                .grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+    
+            @media (max-width: 768px) {
+                .grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </section>
+    <!-- Future Projects Section -->
+    <section id="future">
+        <h2>Future Projects</h2>
+        <p>Innovative ideas and exciting developments are on the way! Stay tuned.</p>
+    </section>
+
+    <!-- BeMyZero Section -->
+    <section id="bemyzero">
+        <h2>BeMyZero</h2>
+        <p>BeMyZero0 is my research and development initiative aimed at redefining tech solutions.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Siva Shankar Eppalapalli | <a href="#hero">Back to Top</a></p>
+        <div class="socials">
+            <a href="https://www.linkedin.com/in/siva-shankar-eppalapalli-88918753/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/sShankar44" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.facebook.com/sShankar44/" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.instagram.com/sshankar44/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
