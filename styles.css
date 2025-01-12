@@ -7,6 +7,183 @@ body {
     overflow-x: hidden;
 }
 
+/* Matrix Letter Animation */
+.matrix-animation {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    z-index: 1; /* Below the hero content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Hero Section */
+#hero {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* To position hero content relative to the section */
+    overflow: hidden; /* Prevent overflow */
+    background: black; /* Fallback background */
+}
+
+/* Matrix Animation */
+#matrix {
+    position: absolute; /* Absolute to allow layering */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Place behind the hero content */
+    background: black; /* Fallback black background */
+    pointer-events: none; /* Ensure clicks pass through the animation */
+}
+
+/* Hero Content */
+.hero-content {
+    z-index: 2; /* Ensure content appears above the matrix animation */
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.6); /* Subtle overlay for readability */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px; /* Limit content width */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Optional subtle shadow */
+}
+
+/* Title and Subtext */
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: #800080; /* Purple text */
+    text-shadow: 0 0 10px #800080; /* Glow effect */
+    margin-bottom: 15px; /* Spacing below the title */
+}
+
+.hero-content .tagline {
+    font-size: 1.5rem;
+    color: #d8bfd8; /* Light purple */
+    margin-bottom: 10px;
+}
+
+.hero-content .subtext {
+    font-size: 1.2rem;
+    color: #d8bfd8;
+    margin-bottom: 20px;
+}
+
+/* Call-to-Action Button */
+.hero-content .cta-button {
+    background-color: #800080;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.hero-content .cta-button:hover {
+    background-color: #d8bfd8; /* Lighter hover color */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem; /* Smaller title on smaller screens */
+    }
+
+    .hero-content .tagline {
+        font-size: 1.2rem;
+    }
+
+    .hero-content .subtext {
+        font-size: 1rem;
+    }
+}
+
+/* About content (hidden initially) */
+#about {
+    background-image: url('"C:\Users\sivas\OneDrive\Desktop\portfolio\public\1234.mp4"'); /* Add your image URL */
+    background-size: cover; /* Makes the image cover the entire section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents image tiling */
+    height: 100vh; /* Ensures it takes up the full viewport height */
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+    position: relative; /* To allow layered content */
+}
+
+#about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent overlay */
+    z-index: 1;
+}
+
+#about h2,
+#about p {
+    position: relative; /* Ensures text appears above the overlay */
+    z-index: 2;
+}
+
+.about-content {
+    z-index: 2;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Typing animation */
+.typing-animation {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    border-right: 2px solid #800080;
+    width: fit-content;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(30) forwards, blink 0.5s step-end infinite;
+}
+
+/* Typing wave keyframes */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Matrix drop animation */
+@keyframes drop {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
 h1, h2, h3, p {
     margin: 0;
     padding: 0;
@@ -48,31 +225,6 @@ body {
     scroll-behavior: smooth; /* Smooth scrolling */
 }
 
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    z-index: 1000;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease;
-}
-
-nav a:hover {
-    background-color: #800080;
-}
-
 /* Navigation */
 nav {
     position: fixed;
@@ -103,28 +255,21 @@ nav a:hover {
     color: #800080; /* Neon purple */
 }
 
-/* Hero Section */
-#hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-}
-
+/* Hero Content */
 .hero-content {
     text-align: center;
-    z-index: 2;
-    background: rgba(0, 0, 0, 0.5); /* Subtle background overlay */
+    z-index: 2; /* Make sure it appears above the Matrix animation */
+    background: rgba(0, 0, 0, 0.5); /* Subtle overlay to improve text visibility */
     padding: 20px;
     border-radius: 10px;
+    max-width: 600px; /* Limit content width for readability */
 }
 
 .hero-content h1 {
     font-size: 3.5rem;
     color: #800080;
-    text-shadow: 0 0 10px #800080;
+    text-shadow: 0 0 10px #800080; /* Glow effect */
+    margin-bottom: 10px; /* Add spacing below the title */
 }
 
 .hero-content .tagline {
@@ -133,19 +278,26 @@ nav a:hover {
     color: #d8bfd8;
 }
 
+.hero-content .subtext {
+    font-size: 1.2rem;
+    color: #d8bfd8;
+    margin-bottom: 20px;
+}
+
 .hero-content .cta-button {
     background-color: #800080;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
-    margin-top: 20px;
-    display: inline-block;
+    text-decoration: none;
     transition: background-color 0.3s ease;
+    font-size: 1rem;
 }
 
 .hero-content .cta-button:hover {
     background-color: #d8bfd8;
 }
+
 
 /* Sections */
 section {
@@ -174,42 +326,272 @@ h2 {
     box-shadow: 0 0 10px #800080;
 }
 
-/* Project Grid */
+/* Education Section */
+#education {
+    padding: 60px 20px;
+    background-color: #000;
+    color: white;
+    text-align: center;
+}
+
+#education h2 {
+    font-size: 2.5rem;
+    color: #800080;
+    margin-bottom: 30px;
+}
+
+/* Grid and course cards */
 .grid {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column width dynamically */
     gap: 20px;
+    justify-items: center; /* Align cards to the center */
+}
+
+.course-card {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(128, 0, 128, 0.5);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto; /* Dynamic height based on content */
+    width: 100%; /* Full width of grid cell */
+    max-width: 250px; /* Set maximum width for consistency */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card h3 {
+    font-size: 1.2rem;
+    color: #d8bfd8;
+    margin: 10px 0; /* Minimal spacing around the heading */
+}
+
+.course-card a {
+    margin-top: 10px; /* Ensure consistent spacing */
+    align-self: center; /* Center the button */
+    background-color: #800080;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.course-card a:hover {
+    background-color: #d8bfd8;
+    transform: scale(1.05); /* Slight hover effect */
+}
+
+.course-card:hover {
+    transform: translateY(-5px); /* Subtle card hover effect */
+    box-shadow: 0 0 15px rgba(216, 191, 216, 0.8); /* Highlight shadow */
+}
+
+/* Projects Section */
+#projects {
+    padding: 60px 20px;
+    background-color: #000;
+    color: white;
+    text-align: center;
+}
+
+#projects h2 {
+    font-size: 2.5rem;
+    color: #800080;
+    margin-bottom: 30px;
+}
+
+/* Grid and Cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Dynamic card layout */
+    gap: 20px;
+    justify-items: center;
+}
+
+.course-card {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(128, 0, 128, 0.5);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto; /* Dynamic height */
+    max-width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card h3 {
+    font-size: 1.2rem;
+    color: #d8bfd8;
+    margin: 10px 0;
+}
+
+.course-card a {
+    margin-top: 10px;
+    align-self: center;
+    background-color: #800080;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.course-card a:hover {
+    background-color: #d8bfd8;
+    transform: scale(1.05);
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(216, 191, 216, 0.8);
+}
+
+/* Modal */
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 50%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: black;
+}
+
+
+/* Grid and Cards for Projects */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Maximum of 5 columns */
+    gap: 15px; /* Space between cards */
+    justify-items: center; /* Center align the cards */
 }
 
 .project-card {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    width: 300px;
+    background: rgba(0, 0, 0, 0.8); /* Match education card background */
+    color: white;
+    padding: 15px; /* Padding similar to education cards */
     border-radius: 10px;
-    box-shadow: 0 0 15px #800080;
-    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(128, 0, 128, 0.5); /* Subtle shadow */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto; /* Dynamic height */
+    width: 100%; /* Full width of the column */
+    max-width: 200px; /* Limit the width for consistent sizing */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card h3 {
+    font-size: 1.2rem; /* Heading font size consistent with education cards */
+    color: #d8bfd8; /* Light purple heading */
+    margin: 10px 0;
+}
+
+.project-card a {
+    margin-top: 10px;
+    align-self: center;
+    background-color: #800080; /* Button color */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.project-card a:hover {
+    background-color: #d8bfd8; /* Hover effect for the button */
+    transform: scale(1.05); /* Slight zoom effect */
 }
 
 .project-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px); /* Subtle hover lift effect */
+    box-shadow: 0 0 15px rgba(216, 191, 216, 0.8); /* Highlight shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr); /* Adjust to 3 columns for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr; /* Single column for very small screens */
+    }
 }
 
 /* Footer */
 footer {
-    background: rgba(0, 0, 0, 0.9);
-    padding: 10px 0;
-    text-align: center;
-    font-size: 0.9rem;
+    background: rgba(0, 0, 0, 0.9); /* Black background with slight opacity */
+    padding: 10px 0; /* Padding for better spacing */
+    text-align: center; /* Center-align text and links */
+    font-size: 0.9rem; /* Adjust font size */
+    position: fixed; /* Makes it stay at the bottom of the page */
+    bottom: 0; /* Align to the bottom */
+    left: 0;
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it's above other elements */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow above footer */
+}
+
+footer span {
+    color: white; /* Footer text color */
+    display: block; /* Ensures proper layout for text */
+}
+
+footer .socials {
+    margin-top: 5px; /* Add some space above the social links */
 }
 
 footer .socials a {
-    margin: 0 10px;
-    color: #d8bfd8;
-    transition: color 0.3s ease;
+    margin: 0 10px; /* Space between social links */
+    color: #d8bfd8; /* Light purple link color */
+    transition: color 0.3s ease; /* Smooth hover effect */
 }
 
 footer .socials a:hover {
-    color: #800080;
+    color: #800080; /* Neon purple on hover */
 }
 
 /* Responsive Design */
@@ -222,3 +604,4 @@ footer .socials a:hover {
         flex-direction: column;
     }
 }
+
