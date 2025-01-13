@@ -170,7 +170,7 @@ function startTypingEffect() {
 Hello, welcome to my world!
 This website is a small glimpse into my mind. The brain is a fascinating and complex organ, but let me simplify it for you. Imagine the brain as a network, connecting dots like ABCD, XYZ, and PQRS. It links these dots to produce countless possibilities—this is how the human brain functions. Similarly, this website is one dot among many. By connecting this dot with others—like my social profiles or professional life—you get a fuller picture of me. Yet, like most people, I value privacy, so only a part of my story is shared here.
 
-I’ve always been fascinated by websites with a hacker-style aesthetic—data scrolling like in The Matrix. Initially, I wanted to build something similar, with binary code scrolling across the screen, capturing and decoding my journey. But I realized it might be too abstract, so I switched to text, making my skills and experiences the centerpiece.
+I’ve always been fascinated by websites with a hacker-style aesthetic—data scrolling like in The Matrix. Initially, I wanted to build something 0's amd 1's scrolling down but later, I switched to text, making my skills and experiences the centerpiece.
 
 Now, every element of this website reflects the skills I’ve learned and the technologies I’ve worked with. It’s not just a portfolio—it’s a representation of me, built with creativity and intention.
     `;
