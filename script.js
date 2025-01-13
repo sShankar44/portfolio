@@ -72,6 +72,78 @@ function animateOverlayName() {
 
     animateOverlay();
 }
+// Array of greeting messages
+const greetings = [
+    "Hi there!",
+    "Welcome to my portfolio!",
+    "Hello! Glad you're here!",
+    "Greetings, visitor!",
+    "Hey there! Let's explore.",
+    "Welcome! Dive into my world.",
+    "Hi! Nice to see you!",
+    "Hello! Discover my journey.",
+    "Hey! Explore and enjoy.",
+    "Welcome aboard! Let's begin."
+];
+
+
+// Select the greeting element
+const greetingElement = document.getElementById("greeting");
+
+// Pick a random greeting
+const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+
+// Display the random greeting
+greetingElement.textContent = randomGreeting;
+
+// Select all navigation links
+const navLinks = document.querySelectorAll("nav a");
+
+// Array of 20 coding principles
+const codingPrinciples = [
+    "Don't Repeat Yourself. Write reusable and modular code to enhance maintainability.",
+    "Learn to analyze the time and space complexity of your algorithms.",
+    "Understand how REST APIs facilitate communication between clients and servers.",
+    "Master Git for tracking changes and collaborating effectively in projects.",
+    "Create websites that adapt seamlessly to different screen sizes using CSS media queries.",
+    "Adopt SOLID principles for clean, scalable, and robust object-oriented design.",
+    "Learn about Promises, Async/Await, and Callbacks in JavaScript for handling asynchronous operations.",
+    "Improve query performance by understanding how indexing works in databases.",
+    "Write unit tests to ensure individual components work as expected.",
+    "Understand closures for better control of scope and memory management.",
+    "Keep your data safe and control access using encapsulation in object-oriented programming.",
+    "Learn dependency injection to achieve loose coupling and better testability in your applications.",
+    "Explore pure functions, immutability, and higher-order functions for better functional programming practices.",
+    "Write meaningful comments that explain the 'why' of your code, not the 'what'.",
+    "Master try-catch blocks, logging, and proper error propagation to make your code robust.",
+    "Understand design patterns like Singleton, Factory, and Observer to solve common software problems.",
+    "Organize your database to reduce redundancy and improve data integrity.",
+    "Learn how the event loop and task queue work for better asynchronous code.",
+    "Think recursively to break down complex problems into smaller, solvable parts.",
+    "Understand cloud concepts like SaaS, PaaS, IaaS, and how to deploy applications on AWS or Azure."
+];
+
+// Function to display a random principle
+function displayRandomPrinciple() {
+    const principleElement = document.getElementById("dynamicPrinciple");
+    const randomIndex = Math.floor(Math.random() * codingPrinciples.length);
+    principleElement.textContent = codingPrinciples[randomIndex];
+}
+
+// Call the function when the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", displayRandomPrinciple);
+
+// Add click event to each navigation link
+navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        // Remove active class from all links
+        navLinks.forEach(nav => nav.classList.remove("active"));
+        
+        // Add active class to the clicked link
+        link.classList.add("active");
+    });
+});
+
 
 // Handle window resize
 function handleResize() {
@@ -100,8 +172,14 @@ resizeCanvas();
 // Typing effect for About Me section
 function startTypingEffect() {
     const aboutText = `
-        Hi! I'm Siva Shankar Eppalapalli, a passionate software engineer with expertise in creating innovative solutions.
-        I thrive on solving complex challenges, building impactful projects, and redefining research and development through BeMyZero0.
+Hello, welcome to my world!
+This website is a small glimpse into my mind. The brain is a fascinating and complex organ, but let me simplify it for you. Imagine the brain as a network, connecting dots like ABCD, XYZ, and PQRS. It links these dots to produce countless possibilities—this is how the human brain functions. Similarly, this website is one dot among many. By connecting this dot with others—like my social profiles or professional life—you get a fuller picture of me. Yet, like most people, I value privacy, so only a part of my story is shared here.
+
+After finishing my master’s degree, I felt lost. I even thought about tearing up my certificate during the commencement ceremony—it seemed meaningless at the time. Days passed, and I wasn’t sure what to do next. Then, while applying for jobs, I noticed many applications required a portfolio website. That’s when the idea of creating this site began.
+
+I’ve always been fascinated by websites with a hacker-style aesthetic—data scrolling like in The Matrix. Initially, I wanted to build something similar, with binary code scrolling across the screen, capturing and decoding my journey. But I realized it might be too abstract, so I switched to text, making my skills and experiences the centerpiece.
+
+Now, every element of this website reflects the skills I’ve learned and the technologies I’ve worked with. It’s not just a portfolio—it’s a representation of me, built with creativity and intention.
     `;
     const typingContainer = document.createElement('div');
     typingContainer.style.fontSize = '1.2rem';

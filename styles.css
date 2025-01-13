@@ -4,7 +4,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #000;
     color: white;
-    overflow-x: hidden;
+    overflow: hidden; /* Disable scrolling */
 }
 
 /* Matrix Letter Animation */
@@ -18,6 +18,34 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+/* General Navigation Styles */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    gap: 20px;
+}
+
+nav a {
+    font-weight: 600;
+    color: #d8bfd8; /* Light purple */
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    font-size: 1rem; /* Regular button size */
+}
+
+/* Active Button Styles */
+nav a.active {
+    color: #800080; /* Dark purple for active */
+    font-size: 1.5rem; /* Increase size to 1.5 times */
+    transform: scale(1.2); /* Slight zoom effect */
+    font-weight: bold;
+}
+
 /* Hero Section */
 #hero {
     height: 100vh; /* Full viewport height */
@@ -72,17 +100,53 @@ body {
     color: #d8bfd8;
     margin-bottom: 20px;
 }
+/* Styling for the greeting */
+.greeting {
+    font-family: 'Poppins', sans-serif; /* Use a clean and modern font */
+    font-size: 3rem; /* Large size for emphasis */
+    font-weight: 700; /* Bold for visibility */
+    color: #d1bdd1; /* Light purple for elegance */
+    text-shadow: 0 0 10px #e3e7ec; /* Subtle glowing effect */
+    margin: 20px 0; /* Space around the greeting */
+    animation: fadeIn 1s ease-in-out; /* Smooth appearance effect */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#dynamicPrinciple {
+    font-size: 1.5rem;
+    color: #d8bfd8;
+    margin: 15px 0;
+    text-align: center;
+}
 
 /* Call-to-Action Button */
-.hero-content .cta-button {
+.cta-button {
     background-color: #800080;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
+    display: inline-block;
     text-decoration: none;
     font-size: 1rem;
     transition: background-color 0.3s ease;
+    margin-top: 1cm; /* Moves the button 5cm down */
 }
+
+.cta-button:hover {
+    background-color: #d8bfd8;
+}
+
 
 .hero-content .cta-button:hover {
     background-color: #d8bfd8; /* Lighter hover color */
@@ -336,9 +400,53 @@ h2 {
 
 #education h2 {
     font-size: 2.5rem;
+    margin-bottom: 20px;
     color: #800080;
-    margin-bottom: 30px;
 }
+/* Master's Degree Section - Margin Adjustment */
+.education-header {
+    margin-bottom: 0.5cm; /* Adds 0.5cm space below the heading */
+    text-align: center; /* Centers the heading */
+}
+
+.degree-title {
+    font-size: 2rem; /* Keeps the heading font size large */
+    margin-top: 10px; /* Optional: Adjust spacing around the text */
+    color: #d8bfd8; /* Light purple */
+    transition: color 0.3s ease; /* Smooth hover transition */
+}
+
+.degree-link {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Uses the color from the parent element */
+}
+
+.degree-link:hover {
+    color: white; /* Changes color to white on hover */
+}
+
+/* Bachelor's Degree Section - Margin Adjustment */
+.education-header {
+    margin-top: 1.5cm; /* Adds 1.5cm space above the heading */
+    text-align: center; /* Centers the heading */
+}
+
+.degree-title {
+    font-size: 2rem; /* Keeps the heading font size large */
+    margin-bottom: 10px;
+    color: #d8bfd8; /* Light purple */
+    transition: color 0.3s ease;
+}
+
+.degree-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.degree-link:hover {
+    color: white; /* Changes to white on hover */
+}
+
 
 /* Grid and course cards */
 .grid {

@@ -10,15 +10,13 @@
 <body>
     <!-- Hero Section -->
     <header id="hero">
-        <div id="matrix"></div> <!-- Matrix animation -->
+        <div id="matrix"></div>
         <div class="hero-content">
-            <h1>Siva Shankar Eppalapalli</h1>
-            <p class="tagline">Tech Enthusiast | Developer | Innovator</p>
-            <p class="subtext">"BeMyZero0 - Redefining Research & Development"</p>
+            <h1 id="greeting"></h1>
+            <p id="dynamicPrinciple"></p>
             <a href="#about" class="cta-button">Explore My Work</a>
         </div>
     </header>
-    
 
     <!-- Navigation -->
     <nav>
@@ -29,10 +27,11 @@
             <li><a href="#work">Work</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#future">Future Projects</a></li>
-            <li><a href="#bemyzero">BeMyZero</a></li>
+            <li><a href="#BeMyZero">BeMyZero</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+    
 
     <!-- About Section -->
     <section id="about">
@@ -46,6 +45,16 @@
     <!-- Education Section -->
     <section id="education">
         <h2>Education</h2>
+        <!-- Master's Degree Section -->
+        <header class="education-header">
+            <h3 class="degree-title">
+                <a href="https://www.pacific.edu/" target="_blank" class="degree-link">
+                    Master of Computer Science at University of the Pacific
+                </a>
+            </h3>
+        </header>
+
+        <!-- Course Cards -->
         <div class="grid">
             <div class="course-card">
                 <h3>Techniques in Research</h3>
@@ -88,6 +97,16 @@
                 <a href="#" onclick="showCourseDetails('dbms'); return false;">View Details</a>
             </div>
         </div>
+         <!-- Bachelor's Degree Section -->
+        <header class="education-header">
+            <h3 class="degree-title">
+                <a href="https://jntuh.ac.in/" target="_blank" class="degree-link">
+                    Bachelor of Technology at Jawaharlal Nehru Technological University Hyderabad (JNTUH)
+                </a>
+            </h3>
+        </header>
+
+      <!-- Modal for Education -->
         <div id="educationModal" class="modal">
             <div class="modal-content">
                 <span class="close-button" onclick="closeEducationModal()">&times;</span>
