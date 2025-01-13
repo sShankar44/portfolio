@@ -74,16 +74,11 @@ function animateOverlayName() {
 }
 // Array of greeting messages
 const greetings = [
-    "Hi there!",
-    "Welcome to my portfolio!",
-    "Hello! Glad you're here!",
-    "Greetings, visitor!",
-    "Hey there! Let's explore.",
-    "Welcome! Dive into my world.",
-    "Hi! Nice to see you!",
-    "Hello! Discover my journey.",
-    "Hey! Explore and enjoy.",
-    "Welcome aboard! Let's begin."
+    "Welcome to my digital realm!",
+    "Greetings, future innovator!",
+    "Hello! Let's code and conquer!",
+    "Hi! Enter the matrix of creativity!",
+    "Hey! Ready for a tech adventure?"
 ];
 
 
@@ -183,10 +178,11 @@ Now, every element of this website reflects the skills I’ve learned and the te
     `;
     const typingContainer = document.createElement('div');
     typingContainer.style.fontSize = '1.2rem';
-    typingContainer.style.color = '#d8bfd8';
+    typingContainer.style.color = '#d8bfd8'; // Adjust color to your theme
     typingContainer.style.fontFamily = "'Poppins', sans-serif";
     typingContainer.style.whiteSpace = 'pre-wrap';
     typingContainer.style.textAlign = 'center';
+    typingContainer.style.lineHeight = '1.8';
 
     const aboutSection = document.querySelector('#about');
     aboutSection.innerHTML = ''; // Clear existing content
@@ -198,12 +194,16 @@ Now, every element of this website reflects the skills I’ve learned and the te
         if (index < aboutText.length) {
             typingContainer.innerHTML += aboutText.charAt(index);
             index++;
-            setTimeout(type, 50);
+            setTimeout(type, 50); // Typing speed
         }
     }
 
     type();
 }
+
+// Call the function when the window loads
+window.addEventListener('load', startTypingEffect);
+
 
 // Trigger About Animation when visible
 function observeAboutSection() {
@@ -319,3 +319,14 @@ function closeProjectsModal() {
     const modal = document.getElementById("projectsModal");
     modal.style.display = "none";
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const visitorCountElement = document.getElementById('visitor-count');
+
+    // Retrieve the visitor count from localStorage
+    let visitors = localStorage.getItem('visitorCount') || 0;
+    visitors++; // Increment the visitor count
+    localStorage.setItem('visitorCount', visitors); // Update the count in localStorage
+
+    // Display the visitor count on the page
+    visitorCountElement.textContent = visitors;
+});
