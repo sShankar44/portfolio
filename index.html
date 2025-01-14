@@ -12,7 +12,7 @@
 
 <!-- Visitor Counter -->
     <div class="visitor-counter">
-    <span class="visitor-icon">👁</span>
+    <span class="visitor-icon" aria-hidden="true">👁</span>
     <span id="visitor-count">0</span>
     </div>
 
@@ -53,7 +53,7 @@
         <!-- Master's Degree Section -->
         <header class="education-header">
             <h3 class="degree-title">
-                <a href="https://www.pacific.edu/" target="_blank" class="degree-link">
+                <a href="https://www.pacific.edu/" target="_blank" class="degree-link" rel="noopener">
                     Master of Computer Science at University of the Pacific
                 </a>
             </h3>
@@ -63,7 +63,7 @@
         <div class="grid">
             <div class="course-card">
                 <h3>Techniques in Research</h3>
-                <a href="#" onclick="showCourseDetails('techniquesInResearch'); return false;">View Details</a>
+                <a href="#!" onclick="showCourseDetails('techniquesInResearch'); return false;">View Details</a>
             </div>
             <div class="course-card">
                 <h3>Fundamentals of Computer Science</h3>
@@ -105,7 +105,7 @@
          <!-- Bachelor's Degree Section -->
         <header class="education-header">
             <h3 class="degree-title">
-                <a href="https://jntuh.ac.in/" target="_blank" class="degree-link">
+                <a href="https://jntuh.ac.in/" target="_blank" class="degree-link" rel="noopener">
                     Bachelor of Technology at Jawaharlal Nehru Technological University Hyderabad (JNTUH)
                 </a>
             </h3>
@@ -123,13 +123,24 @@
     <!-- Work Experience Section -->
     <section id="work">
         <h2>Work Experience</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <h3>Senior Software Engineer</h3>
-                <p>Wipro (5 years) | Achieved "RNR Award"</p>
+        <div class="work-container">
+            <!-- Wipro Experience -->
+            <div class="work-card">
+                <h3>Wipro</h3>
+                <p>(Feb 2017 – Sept 2019)</p>
+                <p>Engineered automation scripts to develop scalable applications for maintaining employee data. Specialized in developing and optimizing API routes to ensure seamless data retrieval and integration. Delivered impactful solutions, enhancing system performance and operational efficiency.</p>
+            </div>
+    
+            <!-- Concentrix Experience -->
+            <div class="work-card">
+                <h3>Concentrix</h3>
+                <p>(Dec 2019 – Apr 2022)</p>
+                <p>Developed and maintained preventative maintenance scripts to ensure software tool reliability and safeguard data integrity in high-traffic environments. Supported Google's platform standards by optimizing cross-platform data syncing and security features. Aligned scalable database solutions with best practices to support Google's review applications.</p>
             </div>
         </div>
     </section>
+    
+    
 
     <!-- Projects Section -->
     <section id="projects">
@@ -201,14 +212,15 @@
 
     <!-- Footer -->
     <footer>
-        <span>© 2025 Siva Shankar Eppalapalli | <a href="#top">Back to Top</a></span>
+        <span>© 2025 Siva Shankar Eppalapalli | <a href="#hero" aria-label="Back to top">Back to Top</a></span>
         <div class="socials">
-            <a href="https://www.linkedin.com/in/siva-shankar-eppalapalli-88918753/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/sShankar44" target="_blank">GitHub</a>
-            <a href="https://www.facebook.com/sShankar44/" target="_blank">Facebook</a>
-            <a href="https://www.instagram.com/sshankar44/" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/in/siva-shankar-eppalapalli-88918753/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/sShankar44" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.facebook.com/sShankar44/" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.instagram.com/sshankar44/" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
     </footer>
+    
 
     <!-- JavaScript -->
     <script src="script.js"></script>

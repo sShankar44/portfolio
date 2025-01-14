@@ -277,6 +277,9 @@ section {
     box-sizing: border-box;
     scroll-snap-align: start; /* Snap alignment for smooth navigation */
 }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     scroll-snap-type: y mandatory; /* Enforces section snapping */
@@ -493,6 +496,78 @@ h2 {
     transform: translateY(-5px); /* Subtle card hover effect */
     box-shadow: 0 0 15px rgba(216, 191, 216, 0.8); /* Highlight shadow */
 }
+
+
+/* Work Experience Section */
+/* Work Experience Section */
+#work {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: black; /* Black background */
+    color: white; /* White text */
+}
+
+#work h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #800080; /* Deep purple for the heading */
+}
+
+/* Work Experience Container */
+.work-container {
+    display: flex;
+    justify-content: center; /* Center-align the cards */
+    gap: 40px; /* Space between the cards */
+    flex-wrap: wrap; /* Wrap cards on smaller screens */
+}
+
+/* Work Card Styles */
+.work-card {
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    border: 1px solid #800080; /* Deep purple border */
+    border-radius: 12px;
+    padding: 20px;
+    width: 45%; /* Set width for side-by-side alignment */
+    max-width: 400px; /* Limit card width */
+    box-shadow: 0 0 15px rgba(128, 0, 128, 0.5); /* Purple glow shadow */
+    text-align: center; /* Center text inside cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+/* Card Hover Effect */
+.work-card:hover {
+    transform: translateY(-5px); /* Slight upward movement */
+    box-shadow: 0 8px 25px rgba(216, 191, 216, 0.8); /* Bright purple highlight shadow */
+}
+
+/* Headings in Cards */
+.work-card h3 {
+    font-size: 1.5rem;
+    color: #d8bfd8; /* Light purple for headings */
+    margin-bottom: 15px;
+    font-weight: bold; /* Bold headings */
+}
+
+/* Paragraph Text in Cards */
+.work-card p {
+    font-size: 1rem;
+    color: #e3e3e3; /* Light gray for text */
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .work-container {
+        flex-direction: column; /* Stack cards vertically */
+        gap: 20px; /* Reduce space between cards */
+    }
+
+    .work-card {
+        width: 100%; /* Full width for small screens */
+    }
+}
+
 
 /* Projects Section */
 #projects {

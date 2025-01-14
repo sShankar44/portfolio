@@ -7,6 +7,8 @@ document.getElementById('matrix').appendChild(canvas);
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+
+
 // Matrix properties
 const columns = Math.floor(canvas.width / 20); // Number of columns
 const drops = Array(columns).fill(0); // Initial Y positions for each column
@@ -170,7 +172,7 @@ function startTypingEffect() {
 Hello, welcome to my world!
 This website is a small glimpse into my mind. The brain is a fascinating and complex organ, but let me simplify it for you. Imagine the brain as a network, connecting dots like ABCD, XYZ, and PQRS. It links these dots to produce countless possibilities—this is how the human brain functions. Similarly, this website is one dot among many. By connecting this dot with others—like my social profiles or professional life—you get a fuller picture of me. Yet, like most people, I value privacy, so only a part of my story is shared here.
 
-I’ve always been fascinated by websites with a hacker-style aesthetic—data scrolling like in The Matrix. Initially, I wanted to build something 0's amd 1's scrolling down but later, I switched to text, making my skills and experiences the centerpiece.
+I’m a computer science enthusiast, a tech geek, and a lifelong learner. I’m passionate about coding, problem-solving, and building things from scratch. I’m also a fan of open-source software and the collaborative spirit of the developer community. My journey in tech began with basic HTML and CSS, and I’ve come a long way since then. I’ve explored various programming languages, frameworks, and tools, each adding a new dimension to my skills.
 
 Now, every element of this website reflects the skills I’ve learned and the technologies I’ve worked with. It’s not just a portfolio—it’s a representation of me, built with creativity and intention.
     `;
@@ -192,7 +194,7 @@ Now, every element of this website reflects the skills I’ve learned and the te
         if (index < aboutText.length) {
             typingContainer.innerHTML += aboutText.charAt(index);
             index++;
-            setTimeout(type, 50); // Typing speed
+            setTimeout(type, 14); // Typing speed
         }
     }
 
@@ -328,3 +330,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Display the visitor count on the page
     visitorCountElement.textContent = visitors;
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const count = localStorage.getItem("visitCount") || 0;
+    localStorage.setItem("visitCount", parseInt(count) + 1);
+    document.getElementById("visitor-count").textContent = localStorage.getItem("visitCount");
+});
+
